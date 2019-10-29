@@ -30,3 +30,5 @@ else
 	GITCMD="/usr/bin/hub"
 fi
 alias config="${GITCMD} --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+
+alias weather="curl wttr.in"
