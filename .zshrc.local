@@ -23,4 +23,10 @@ export LESS=-R
 eval "$(rbenv init -)"
 
 # Config manages the dotfiles for my system
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+# Use hub if avaliable, otherwise git
+if [ -e /usr/bin/hub ]; then
+	GITCMD="/usr/bin/hub"
+else
+	GITCMD="/usr/bin/hub"
+fi
+alias config="${GITCMD} --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
