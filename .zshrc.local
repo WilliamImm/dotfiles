@@ -29,3 +29,5 @@ fi
 alias config="${GITCMD} --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
 alias weather="curl wttr.in"
+
+[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
