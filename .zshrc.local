@@ -1,0 +1,26 @@
+alias diff='diff --color=auto'
+
+# I hate plain old vi, use vim in place of it
+alias vi="vim"
+export EDITOR="vim"
+
+# Access local scripts and such
+export PATH="${HOME}/bin:${PATH}"
+
+# Import colorscheme from 'wal' asynchronously
+# &   # Run the process in the background.
+# ( ) # Hide shell job control messages.
+(cat ~/.cache/wal/sequences &)
+
+# Alternative (blocks terminal for 0-3ms)
+cat ~/.cache/wal/sequences
+
+# To add support for TTYs this line can be optionally added.
+source ~/.cache/wal/colors-tty.sh
+
+export LESS=-R
+
+eval "$(rbenv init -)"
+
+# Config manages the dotfiles for my system
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'

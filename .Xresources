@@ -1,0 +1,28 @@
+! Various xresources stuffs
+
+! Xft: reflect fontconfig settings
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+! urxvt: some additional settings, beautification
+URxvt.perl-ext-common: default,resize-font,selection-to-clipboard,matcher
+URxvt.scrollBar: false
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.font: xft:Source Code Pro:size=11
+URxvt.matcher.button:     1
+! urxvt scrolling setup - up and down 10 lines
+URxvt.keysym.Shift-Up: command:\033]720;10\007
+URxvt.keysym.Shift-Down: command:\033]721;10\007
+! these allow font resizing to work
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.internalBorder: 0
+
+
+! Dunst font
+Dunst.font: Source Code Pro
+Dunst.font_size: 10
