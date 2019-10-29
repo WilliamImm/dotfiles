@@ -1,3 +1,6 @@
+# Display the current weather upon login
+curl -sNL wttr.in | head -n 7
+
 # On login to the first virtual terminal, always start X
 if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then 
 	exec startx 2>&1 | tee x-start.log 
