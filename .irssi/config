@@ -150,7 +150,13 @@ channels = (
   { name = "#ircsource"; chatnet = "IRCSource"; autojoin = "No"; },
   { name = "#netfuze"; chatnet = "NetFuze"; autojoin = "No"; },
   { name = "#oftc"; chatnet = "OFTC"; autojoin = "No"; },
-  { name = "silc"; chatnet = "SILC"; autojoin = "No"; }
+  { name = "silc"; chatnet = "SILC"; autojoin = "No"; },
+  { name = "#archlinux"; chatnet = "freenode"; autojoin = "yes"; },
+  {
+    name = "#archlinux-offtopic";
+    chatnet = "freenode";
+    autojoin = "yes";
+  }
 );
 
 aliases = {
@@ -315,5 +321,9 @@ settings = {
   "fe-common/core" = {
     use_msgs_window = "yes";
     autocreate_query_level = "DCCMSGS";
+    autolog = "yes";
   };
 };
+keyboard = ( 
+  { key = "meta-[M"; id = "command"; data = "mouse_xterm "; }
+);
