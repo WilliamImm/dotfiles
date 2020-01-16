@@ -5,8 +5,8 @@
 wal -R
 # Properly set the $DISPLAY env, if not already set
 systemctl --user import-environment DISPLAY
-# Launch Compton for window compositing + anti-tearing on Skylake graphics
-compton &
+# Launch picom for window compositing + anti-tearing on Skylake graphics
+picom &
 # Xscreensaver, as the screen locker & screensaver
 xscreensaver -no-splash &
 # Dex, for autostart entries

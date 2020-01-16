@@ -1,1 +1,2 @@
 fpath+=~/.zfunc
+source $HOME/.profile
