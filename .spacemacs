@@ -39,7 +39,8 @@ values."
      helm
      auto-completion
      ;; better-defaults
-     (c-c++ :variables c-c++-enable-clang-support t c-c++-default-mode-for-headers 'c++-mode)
+     bibtex
+     (c-c++ :variables c-c++-backend 'lsp-clangd c-c++-enable-clang-support t c-c++-default-mode-for-headers 'c++-mode)
      emacs-lisp
      go
      git
@@ -64,9 +65,10 @@ values."
      shell-scripts
      spell-checking
      syntax-checking
+     systemd
+     typescript
      version-control
-     yaml
-     ycmd
+     (yaml :variables yaml-enable-lsp t)
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -74,7 +76,6 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages
    '(
-     xresources-theme
    )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -149,7 +150,6 @@ values."
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
                          spacemacs-dark
-                         xresources-theme
                          spacemacs-light)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
@@ -314,6 +314,8 @@ values."
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
    dotspacemacs-whitespace-cleanup nil
+
+   dotspacemacs-mode-line-theme 'spacemacs
    ))
 
 (defun dotspacemacs/user-init ()
@@ -365,3 +367,24 @@ you should place your code here."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(defun dotspacemacs/emacs-custom-settings ()
+  "Emacs custom settings.
+This is an auto-generated function, do not modify its content directly, use
+Emacs customize menu instead.
+This function is called at the very end of Spacemacs initialization."
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(evil-want-Y-yank-to-eol nil)
+ '(package-selected-packages
+   (quote
+    (systemd dap-mode bui rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv projectile-rails rake inflections minitest feature-mode chruby bundler inf-ruby flycheck-ycmd company-ycmd ycmd request-deferred magit-gh-pulls github-search github-clone github-browse-file gist gh marshal logito pcache ht yaml-mode web-mode web-beautify tagedit slim-mode scss-mode sass-mode pug-mode livid-mode json-mode json-snatcher json-reformat js2-refactor multiple-cursors js-doc helm-css-scss haml-mode emmet-mode ein skewer-mode polymode deferred websocket js2-mode simple-httpd company-web web-completion-data company-tern tern coffee-mode company-auctex auctex-latexmk auctex yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional helm-pydoc cython-mode company-anaconda anaconda-mode pythonic transient lv insert-shebang fish-mode company-shell company-emacs-eclim eclim toml-mode racer flycheck-rust cargo rust-mode xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help smeargle orgit mmm-mode markdown-toc markdown-mode magit-gitflow helm-gitignore go-guru go-eldoc gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md evil-magit magit magit-popup company-go go-mode helm-rtags flycheck-rtags disaster company-rtags rtags company-c-headers cmake-mode clang-format xresources-theme org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download htmlize helm-company helm-c-yasnippet gnuplot git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-commit with-editor git-gutter fuzzy flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip flycheck diff-hl company-statistics company auto-yasnippet yasnippet auto-dictionary ac-ispell auto-complete ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+)
