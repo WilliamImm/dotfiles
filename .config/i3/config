@@ -13,6 +13,11 @@
 # it fails to get colors from Xresources.
 set_from_resource $fg i3wm.color7 #f0f0f0
 set_from_resource $bg i3wm.color2 #f0f0f0
+set_from_resource $bar i3wm.color0 #000000
+set_from_resource $alert_border i3wm.color3 #2f343a
+set_from_resource $alert i3wm.color4 #900000
+set_from_resource $white i3wm.color15 "#fefbec"
+set_from_resource $split i3wm.color8 "#9E664B0"
 
 # class                 border  backgr. text indicator child_border
 client.focused          $bg     $bg     $fg  $bg       $bg
@@ -187,8 +192,11 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         colors {
-                background #000000
+                background $bar
                 statusline $fg
+                inactive_workspace $split $bar #888888
+                active_workspace $split $fg #ffffff
+                urgent_workspace $alert_border $alert #ffffff
         }
         status_command i3status
 }

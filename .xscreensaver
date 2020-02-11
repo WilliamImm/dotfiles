@@ -1,5 +1,5 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.43 for wimmendorf on Wed Aug 28 20:44:28 2019.
+# Written by xscreensaver-demo 5.43 for wimmendorf on Thu Jan 30 22:30:31 2020.
 # https://www.jwz.org/xscreensaver/
 
 timeout:	0:10:00
@@ -282,7 +282,7 @@ programs:								      \
   GL: 				colorfire --root			    \n\
   GL: 				flux --root				    \n\
   GL: 		 "BusySpheres" 	busyspheres --root			    \n\
-  GL: 				euphoria --root				    \n\
+  GL: 				euphoria -r				    \n\
   GL: 		  "Pixel City" 	pixelcity --root			    \n\
   GL: 				skyrocket --root			    \n\
   GL: 				lorenz --root				    \n\
@@ -303,6 +303,7 @@ programs:								      \
   GL: 				handsy -root				    \n\
   GL: 				deepstars -root				    \n\
   GL: 				gravitywell -root			    \n\
+  GL: 				electricsheep --root 1			    \n\
 
 
 pointerPollTime:    0:00:05

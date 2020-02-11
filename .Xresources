@@ -1,4 +1,5 @@
 ! Various xresources stuffs
+#include "/home/wimmendorf/.cache/wal/colors.Xresources"
 
 ! Xft: reflect fontconfig settings
 Xft.autohint: 0

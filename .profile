@@ -10,3 +10,4 @@ export npm_config_prefix=~/.node_modules
 export QT_QPA_PLATFORMTHEME=gtk2
 
 PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
+export DOOMDIR=~/doom-emacs-config

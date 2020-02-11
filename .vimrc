@@ -6,9 +6,10 @@ Plug 'sheerun/vim-polyglot'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-sleuth'
+Plug 'deviantfero/wpgtk.vim'
 call plug#end()
 
-colorscheme wal
+colorscheme wpgtk
 
 let g:airline_powerline_fonts = 1
 
