@@ -10,7 +10,7 @@ picom &
 # Xscreensaver, as the screen locker & screensaver
 xscreensaver -no-splash &
 # Dex, for autostart entries
-dex -a &
+dex -a -e i3 &
 # Finally, launch i3 or bspwm for the actual window management
 i3
 # bspwm
