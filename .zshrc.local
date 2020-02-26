@@ -24,10 +24,20 @@ eval "$(rbenv init -)"
 if [ -e /usr/bin/hub ]; then
 	GITCMD="/usr/bin/hub"
 else
-	GITCMD="/usr/bin/hub"
+	GITCMD="/usr/bin/git"
 fi
 alias config="${GITCMD} --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
 alias weather="curl wttr.in"
 
-[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
+# [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
+
+[[ -r "/usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh" ]] && source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+
+[[ -r "/usr/share/doc/pkgfile/command-not-found.zsh" ]] && source /usr/share/doc/pkgfile/command-not-found.zsh
+
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+ZSH_AUTOSUGGEST_USE_ASYNC="true"
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+[[ -r "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh" ]] && source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+
